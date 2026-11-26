@@ -53,4 +53,6 @@ Repo này là **trang cá nhân (portfolio, digital CV)** của Nguyễn Quốc 
 - **Tên hiển thị**: `<Loại> <phạm vi> · <nội dung>`, cùng một từ cho cùng một loại ở mọi chỗ.
   - Dạy học: `Slides K1–K4`, `Cheat sheet K1–K4 · Anh–Việt`, `Video K1–K4 · <tựa>`, `Visual K1 · <công cụ>`.
   - Chứng nhận: `Chứng nhận · <nội dung>` / `Certificate · <nội dung>`; bảng giải: `Bảng giải · …` / `Prize board · …`.
-  - Tự học (`ME.learn`): mỗi bài là `{ n, title, lesson, practice }`, hiện `Bài N · <tên> · bài giảng · thực hành`. **Lesson thì gọi lesson hết, practice thì practice hết**, không trộn "quiz", "bài tập", "lab"…
+  - Tự học (`ME.learn`): mỗi bài là `{ n, title, lesson, practice, video }`, hiện `Bài N · <tên> · bài giảng · thực hành · video`.
+  - **Mỗi bài tự học có đủ ba phần: slides bài giảng (`lesson`), trang thực hành (`practice`) và video cơ chế (`video`). Khi thêm bài, phải tìm video, đừng bỏ sót.** Video thường là file mp4 trong trang thực hành (`Artifact list scope:"files"`), có khi nhúng base64 ngay trong `index.html` của trang thực hành, hoặc nằm trong kho asset của deck (`scope:"assets"`, slide `video`). Chép về `media/video-<chủ đề>-l<n>.mp4` (chủ đề: `gutbrain`, `network`, `dairy`, `wine`) kèm ảnh bìa `-cover.jpg` (lấy khung hình bằng AVFoundation). Bài 3 Hầm rượu hiện chưa có video.
+  - Các artifact claude.ai đang ở chế độ riêng tư, nên video chép về repo là phần duy nhất người xem chắc chắn mở được. **Lesson thì gọi lesson hết, practice thì practice hết**, không trộn "quiz", "bài tập", "lab"…
