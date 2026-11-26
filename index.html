@@ -218,8 +218,12 @@
   .folder p { margin: 0 0 12px; font-size: 15px; line-height: 1.5; }
   .folder .sheet { background: var(--card); padding: 10px 12px; box-shadow: 0 1px 2px rgba(0,0,0,.1); transform: rotate(-.6deg); }
   .folder ul { list-style: none; margin: 0; padding: 0; font-size: 15px; }
-  .folder li { padding: 3px 0; border-bottom: 1px dotted var(--rule); } .folder li:last-child { border-bottom: 0; }
-  .folder .type { font: 15px var(--hand); color: var(--faint); }
+  ol.lessons { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+  ol.lessons li { display: grid; grid-template-columns: 4.2em 1fr; gap: 0 6px; padding: 6px 0; border-bottom: 1px dotted var(--rule); }
+  ol.lessons li:last-child { border-bottom: 0; }
+  ol.lessons .ln { font: 12px/1.9 var(--mono); color: var(--rose); grid-row: span 2; }
+  ol.lessons .lt { font-weight: 600; line-height: 1.35; }
+  ol.lessons .ll { font-size: 14.5px; }
 
   /* ---- 6. học code ---- */
   .code-grid { display: grid; grid-template-columns: 1.15fr 1fr .9fr; gap: 26px; align-items: start; }
@@ -480,21 +484,21 @@ const ME = {
     { date: "09/2025 – 06/2026", kind: "lab", title: ["Thực tập Y Sinh học Phân tử", "Molecular Biomedicine intern"], org: ["Đại học Y Dược TP.HCM", "University of Medicine and Pharmacy at HCMC"],
       points: [["Mười tháng thực tập, học giải trình tự Sanger, nuôi cấy tế bào động vật, PCR và tách chiết DNA.", "Ten months training in Sanger sequencing, mammalian cell culture, PCR and DNA extraction."],
                ["Hoàn thành chương trình huấn luyện kỹ năng wet lab “Thực hành Sinh học Phân tử dành cho sinh viên đại học” (280 tiết, 08/09 – 24/10/2025).", "Completed the wet-lab training programme “Molecular Biology Laboratory Practice for Undergraduate Students” (280 periods, 8 Sep – 24 Oct 2025)."]],
-      items: [{ p: "cert", title: ["Chứng nhận Thực hành Sinh học Phân tử · 280 tiết", "Molecular Biology Lab Practice · 280 periods"], where: ["Trung tâm Đào tạo Nhân lực Y tế, ĐH Y Dược TP.HCM · 2025", "Medical Training Centre, UMP HCMC · 2025"], thumb: "img/certs/ump-molbio-sm.jpg", img: "img/certs/ump-molbio.jpg" }] },
+      items: [{ p: "cert", title: ["Chứng nhận · Thực hành Sinh học Phân tử (280 tiết)", "Certificate · Molecular Biology Laboratory Practice (280 periods)"], where: ["Trung tâm Đào tạo Nhân lực Y tế, ĐH Y Dược TP.HCM · 2025", "Medical Training Centre, UMP HCMC · 2025"], thumb: "img/cert-2025-ump-molbio-sm.jpg", img: "img/cert-2025-ump-molbio.jpg" }] },
     { date: "09 – 12/2025", kind: "research", title: ["Cuộc thi Sáng tạo Tế bào gốc 2025", "Stem Cell Innovation Contest 2025"], org: ["Viện Tế bào gốc, ĐH Khoa học Tự nhiên TP.HCM", "Stem Cell Institute, VNUHCM–University of Science"],
       points: [["Đội TEISC đạt Giải Khuyến khích, Top 18 với ý tưởng CAR-T vạn năng “sẵn có” từ tế bào gốc máu cuống rốn cho bệnh bạch cầu AML.", "Team TEISC won the Encouragement Prize (Top 18) with a universal off-the-shelf CAR-T from cord-blood stem cells for AML."],
                ["Poster cá nhân: mô hình tế bào gan từ hiPSC để nghiên cứu ung thư gan liên quan NAFLD/NASH.", "Individual poster: hiPSC-derived hepatocyte models for NAFLD/NASH-related liver cancer."],
                ["Báo cáo poster tại hội thảo SCI TechUpdate về công nghệ tế bào ở Việt Nam (20/12/2025).", "Presented a poster at the SCI TechUpdate seminar on cell technology in Vietnam (20 Dec 2025)."]],
       items: [{ p: "poster", i: 3 }, { p: "poster", i: 4 },
-        { p: "cert", title: ["Chứng nhận Giải Khuyến khích · Top 18 (đội TEISC)", "Encouragement Prize · Top 18 (team TEISC)"], where: ["Viện Tế bào gốc · 30/12/2025", "Stem Cell Institute · 30 Dec 2025"], thumb: "img/certs/stemcell-encouragement-prize-sm.jpg", img: "img/certs/stemcell-encouragement-prize.jpg" },
-        { p: "cert", title: ["Bảng trao Giải Khuyến khích", "Encouragement Prize board"], where: ["Stem Cell Innovation Contest 2025", "Stem Cell Innovation Contest 2025"], thumb: "img/certs/stemcell-prize-board-sm.jpg", img: "img/certs/stemcell-prize-board.jpg" },
-        { p: "cert", title: ["Chứng nhận báo cáo poster · SCI TechUpdate", "Poster presentation · SCI TechUpdate"], where: ["Viện Tế bào gốc · 20/12/2025 · 20 giờ", "Stem Cell Institute · 20 Dec 2025 · 20 hours"], thumb: "img/certs/sci-techupdate-poster-sm.jpg", img: "img/certs/sci-techupdate-poster.jpg" }] },
+        { p: "cert", title: ["Chứng nhận · Giải Khuyến khích, Top 18 (đội TEISC)", "Certificate · Encouragement Prize, Top 18 (team TEISC)"], where: ["Viện Tế bào gốc · 30/12/2025", "Stem Cell Institute · 30 Dec 2025"], thumb: "img/cert-2025-stemcell-prize-sm.jpg", img: "img/cert-2025-stemcell-prize.jpg" },
+        { p: "cert", title: ["Bảng giải · Giải Khuyến khích, Top 18 (đội TEISC)", "Prize board · Encouragement Prize, Top 18 (team TEISC)"], where: ["Stem Cell Innovation Contest 2025", "Stem Cell Innovation Contest 2025"], thumb: "img/prizeboard-2025-stemcell-sm.jpg", img: "img/prizeboard-2025-stemcell.jpg" },
+        { p: "cert", title: ["Chứng nhận · Báo cáo poster tại SCI TechUpdate", "Certificate · Poster presentation at SCI TechUpdate"], where: ["Viện Tế bào gốc · 20/12/2025 · 20 giờ", "Stem Cell Institute · 20 Dec 2025 · 20 hours"], thumb: "img/cert-2025-sci-techupdate-sm.jpg", img: "img/cert-2025-sci-techupdate.jpg" }] },
     { date: "07 – 10/2026", kind: "lab", title: ["Thực tập sinh Tâm lý · Touching Soul Center", "Undergraduate Psychology Intern · Touching Soul Center"], org: ["Công ty TNHH Chạm vào Tâm hồn (TSC)", "Touching Soul Center (TSC)"],
       points: [["Thực tập về sức khoẻ tinh thần, nhìn con người theo mô hình Sinh học – Tâm lý – Xã hội; hoàn thành khoá “Xây dựng tư duy đạo đức cho nhà tham vấn” (15 giờ).", "An internship in mental health through the bio-psycho-social model; completed the course “Building an Ethical Mindset for Counselors” (15 hours)."],
                ["Dự án kết khoá: brochure “Dinh Dưỡng Chữa Lành” về thực phẩm, dưỡng chất và stress. Bấm vào thẻ brochure để lật xem.", "Capstone project: the “Healing Nutrition” brochure on food, nutrients and stress. Tap the brochure card to flip through it."]],
       items: [{ p: "brochure" },
-        { p: "cert", title: ["Chứng nhận hoàn thành chương trình Thực tập sinh", "Certificate of Completion · Internship Program"], where: ["Touching Soul Center · 07 – 10/2026", "Touching Soul Center · Jul – Oct 2026"], thumb: "img/certs/tsc-internship-sm.jpg", img: "img/certs/tsc-internship.jpg" },
-        { p: "cert", title: ["Chứng nhận khoá Xây dựng tư duy đạo đức cho nhà tham vấn", "Building an Ethical Mindset for Counselors"], where: ["Touching Soul Center · 15 giờ", "Touching Soul Center · 15 hours"], thumb: "img/certs/tsc-ethics-sm.jpg", img: "img/certs/tsc-ethics.jpg" }] },
+        { p: "cert", title: ["Chứng nhận · Hoàn thành chương trình Thực tập sinh", "Certificate · Completion of the Internship Program"], where: ["Touching Soul Center · 07 – 10/2026", "Touching Soul Center · Jul – Oct 2026"], thumb: "img/cert-2026-tsc-internship-sm.jpg", img: "img/cert-2026-tsc-internship.jpg" },
+        { p: "cert", title: ["Chứng nhận · Khoá Xây dựng tư duy đạo đức cho nhà tham vấn (15 giờ)", "Certificate · Building an Ethical Mindset for Counselors (15 hours)"], where: ["Touching Soul Center · 15 giờ", "Touching Soul Center · 15 hours"], thumb: "img/cert-2026-tsc-ethics-sm.jpg", img: "img/cert-2026-tsc-ethics.jpg" }] },
     { date: "06/2026 – nay", kind: "research", now: true, title: ["Trợ lý nghiên cứu · BV Bệnh Nhiệt đới", "Research Assistant · Hospital for Tropical Diseases"], org: ["Bệnh viện Bệnh Nhiệt đới TP.HCM", "Hospital for Tropical Diseases, HCMC"],
       points: [["Bắt đầu ngay sau khi kết thúc thực tập ở ĐH Y Dược, quay lại bệnh viện nơi mình từng thực tập vi sinh.", "Started right after the molecular biomedicine internship ended, returning to the hospital where I had interned in microbiology."],
                ["Nghiên cứu vi khuẩn Gram âm kháng carbapenem và E. coli kháng carbapenem gây nhiễm khuẩn huyết, kết hợp dữ liệu lâm sàng với giải trình tự toàn bộ hệ gen.", "Research on carbapenem-resistant Gram-negative bacteria and carbapenem-resistant E. coli in bloodstream infections, linking clinical data with whole-genome sequencing."],
@@ -522,8 +526,8 @@ const ME = {
     // Brochure thật là tờ gấp 4 ô vuông mỗi mặt. Mỗi trang = một ô:
     // sheet là ảnh mặt giấy, col là ô thứ mấy tính từ trái (0–3). Thứ tự dưới đây là thứ tự lật.
     short: ["Brochure gấp về thực phẩm, dưỡng chất và stress. Dự án kết khoá thực tập.", "A folded brochure on food, nutrients and stress. My internship capstone."],
-    where: "Touching Soul Center, 2026", thumb: "img/nutrition-cover.jpg",
-    sheets: { out: "img/nutrition-outside.jpg", in: "img/nutrition-inside.jpg" },
+    where: "Touching Soul Center, 2026", thumb: "img/brochure-2026-nutrition-cover.jpg",
+    sheets: { out: "img/brochure-2026-nutrition-outside.jpg", in: "img/brochure-2026-nutrition-inside.jpg" },
     pages: [
       { sheet: "out", col: 3, name: ["Bìa", "Cover"] },
       { sheet: "out", col: 1, name: ["Mô hình Sinh – Tâm – Xã", "The bio-psycho-social model"] },
@@ -539,15 +543,15 @@ const ME = {
   posters: [
     { title: ["Xu hướng theo thời gian về kiểu hình và kiểu gen kháng carbapenem của vi khuẩn Gram âm sau đại dịch COVID-19", "Temporal trends in phenotype and genotype of carbapenem-resistant Gram-negative bacteria after COVID-19"],
       where: "HCMC Society of Medical Laboratory Technology Conference, 2026", award: ["Poster được bình chọn nhiều nhất", "People's Choice Poster Award"],
-      img: "img/poster-peoples-choice.jpg", thumb: "img/poster-peoples-choice-sm.jpg" },
+      img: "img/poster-2026-carbapenem-gram-negative.jpg", thumb: "img/poster-2026-carbapenem-gram-negative-sm.jpg" },
     { title: ["Đặc điểm lâm sàng và hệ gene của E. coli kháng carbapenem gây nhiễm khuẩn huyết", "Clinical characteristics and genome of carbapenem-resistant E. coli causing bloodstream infections"],
-      where: "Pasteur Institute Scientific Conference, 10/2026", img: "img/poster-hnkh2026.jpg", thumb: "img/poster-hnkh2026-sm.jpg" },
+      where: "Pasteur Institute Scientific Conference, 10/2026", img: "img/poster-2026-ecoli-pasteur.jpg", thumb: "img/poster-2026-ecoli-pasteur-sm.jpg" },
     { title: ["Tương quan giữa đặc điểm lâm sàng và hồ sơ gen của E. coli kháng carbapenem trong nhiễm khuẩn huyết", "Correlating clinical characteristics with the genomic profile of carbapenem-resistant E. coli in bloodstream infections"],
-      where: "CHRO 2026, 23rd International Conference on Campylobacter, Helicobacter and Related Organisms", img: "img/poster-ecoli.jpg", thumb: "img/poster-ecoli-sm.jpg" },
+      where: "CHRO 2026, 23rd International Conference on Campylobacter, Helicobacter and Related Organisms", img: "img/poster-2026-ecoli-chro.jpg", thumb: "img/poster-2026-ecoli-chro-sm.jpg" },
     { title: ["CAR-T vạn năng “sẵn có” từ tế bào gốc máu cuống rốn, nhắm đích CLL-1 trong điều trị AML", "A universal “off-the-shelf” CAR-T from cord-blood stem cells, targeting CLL-1 for AML"],
-      where: "Stem Cell Innovation Contest 2025 · Cell Technology in Viet Nam Conference", award: ["Giải Khuyến khích · Top 18 (đội TEISC)", "Encouragement Prize · Top 18 (team TEISC)"], img: "img/poster-cart.jpg", thumb: "img/poster-cart-sm.jpg" },
+      where: "Stem Cell Innovation Contest 2025 · Cell Technology in Viet Nam Conference", award: ["Giải Khuyến khích · Top 18 (đội TEISC)", "Encouragement Prize · Top 18 (team TEISC)"], img: "img/poster-2025-cart-cll1.jpg", thumb: "img/poster-2025-cart-cll1-sm.jpg" },
     { title: ["Mô hình tế bào gan từ hiPSC để nghiên cứu ung thư gan liên quan NAFLD/NASH", "hiPSC-derived hepatocyte models for studying NAFLD/NASH-related HCC"],
-      where: ["Poster cá nhân · Stem Cell Innovation Contest 2025", "Individual poster · Stem Cell Innovation Contest 2025"], img: "img/poster-hipsc.jpg", thumb: "img/poster-hipsc-sm.jpg" },
+      where: ["Poster cá nhân · Stem Cell Innovation Contest 2025", "Individual poster · Stem Cell Innovation Contest 2025"], img: "img/poster-2025-hipsc-nafld.jpg", thumb: "img/poster-2025-hipsc-nafld-sm.jpg" },
   ],
   studies: [
     ["Hiệu quả nghiệm pháp Epley so với Semont-Plus trong chóng mặt tư thế kịch phát lành tính", "Epley vs Semont-Plus maneuver in benign paroxysmal positional vertigo"],
@@ -579,33 +583,33 @@ const ME = {
       ["Vận dụng di truyền vào ví dụ mới", "Applying genetics to new examples"],
     ],
     // Visual tương tác: bản sao của artifact bài học, đặt trong portfolio/lessons; mỗi K mở thẳng phần #kN
-    lessons: [{ ks: [1, 4], url: "lessons/genetics-k1-k4.html" }, { ks: [5, 13], url: "lessons/genetics-k5-k13.html" }],
+    lessons: [{ ks: [1, 4], url: "lessons/visual-genetics-k1-k4.html" }, { ks: [5, 13], url: "lessons/visual-genetics-k5-k13.html" }],
     tools: ["Zoom from cell to gene · karyogram", "Mitosis, stage by stage", "Meiosis, stage by stage · flip a pair", "Compare table · crossing-over",
             "Fertilisation simulator · X-linked cross", "Allele switcher · environment", "Cross builder", "Grow offspring of Aa × Aa",
             "Dihybrid cross builder", "Dominant, intermediate or codominant", "Pedigree detective", "Blood group calculator · parent puzzle",
             "Mystery plant · sample size"],
     // Slides và cheat sheet là PDF trong portfolio/media (xuất từ PowerPoint/Word), mở được ngay không cần quyền
     slides: [
-      { ks: [1, 4], name: ["Slides bài giảng K1–K4", "Lesson slides K1–K4"], url: "media/genetics-slides-k1-k4.pdf" },
-      { ks: [5, 7], name: ["Slides bài giảng K5–K7", "Lesson slides K5–K7"], url: "media/genetics-slides-k5-k7.pdf" },
-      { ks: [8, 10], name: ["Slides bài giảng K8–K10", "Lesson slides K8–K10"], url: "media/genetics-slides-k8-k10.pdf" },
-      { ks: [11, 13], name: ["Slides bài giảng K11–K13", "Lesson slides K11–K13"], url: "media/genetics-slides-k11-k13.pdf" },
+      { ks: [1, 4], name: ["Slides K1–K4", "Slides K1–K4"], url: "media/slides-genetics-k1-k4.pdf" },
+      { ks: [5, 7], name: ["Slides K5–K7", "Slides K5–K7"], url: "media/slides-genetics-k5-k7.pdf" },
+      { ks: [8, 10], name: ["Slides K8–K10", "Slides K8–K10"], url: "media/slides-genetics-k8-k10.pdf" },
+      { ks: [11, 13], name: ["Slides K11–K13", "Slides K11–K13"], url: "media/slides-genetics-k11-k13.pdf" },
     ],
     cheats: [
-      { ks: [1, 4], name: ["Cheat sheet K1–K4 · Anh–Việt", "Cheat sheet K1–K4 · EN–VI"], url: "media/genetics-cheatsheet-k1-k4-en-vi.pdf" },
-      { ks: [1, 4], name: ["Cheat sheet K1–K4 · Anh–Đức", "Cheat sheet K1–K4 · EN–DE"], url: "media/genetics-cheatsheet-k1-k4-en-de.pdf" },
-      { ks: [5, 7], name: ["Cheat sheet K5–K7 · Anh–Việt", "Cheat sheet K5–K7 · EN–VI"], url: "media/genetics-cheatsheet-k5-k7-en-vi.pdf" },
-      { ks: [5, 7], name: ["Cheat sheet K5–K7 · Anh–Đức", "Cheat sheet K5–K7 · EN–DE"], url: "media/genetics-cheatsheet-k5-k7-en-de.pdf" },
-      { ks: [8, 10], name: ["Cheat sheet K8–K10 · Anh–Việt", "Cheat sheet K8–K10 · EN–VI"], url: "media/genetics-cheatsheet-k8-k10-en-vi.pdf" },
-      { ks: [8, 10], name: ["Cheat sheet K8–K10 · Anh–Đức", "Cheat sheet K8–K10 · EN–DE"], url: "media/genetics-cheatsheet-k8-k10-en-de.pdf" },
-      { ks: [11, 13], name: ["Cheat sheet K11–K13 · Anh–Việt", "Cheat sheet K11–K13 · EN–VI"], url: "media/genetics-cheatsheet-k11-k13-en-vi.pdf" },
-      { ks: [11, 13], name: ["Cheat sheet K11–K13 · Anh–Đức", "Cheat sheet K11–K13 · EN–DE"], url: "media/genetics-cheatsheet-k11-k13-en-de.pdf" },
+      { ks: [1, 4], name: ["Cheat sheet K1–K4 · Anh–Việt", "Cheat sheet K1–K4 · EN–VI"], url: "media/cheatsheet-genetics-k1-k4-en-vi.pdf" },
+      { ks: [1, 4], name: ["Cheat sheet K1–K4 · Anh–Đức", "Cheat sheet K1–K4 · EN–DE"], url: "media/cheatsheet-genetics-k1-k4-en-de.pdf" },
+      { ks: [5, 7], name: ["Cheat sheet K5–K7 · Anh–Việt", "Cheat sheet K5–K7 · EN–VI"], url: "media/cheatsheet-genetics-k5-k7-en-vi.pdf" },
+      { ks: [5, 7], name: ["Cheat sheet K5–K7 · Anh–Đức", "Cheat sheet K5–K7 · EN–DE"], url: "media/cheatsheet-genetics-k5-k7-en-de.pdf" },
+      { ks: [8, 10], name: ["Cheat sheet K8–K10 · Anh–Việt", "Cheat sheet K8–K10 · EN–VI"], url: "media/cheatsheet-genetics-k8-k10-en-vi.pdf" },
+      { ks: [8, 10], name: ["Cheat sheet K8–K10 · Anh–Đức", "Cheat sheet K8–K10 · EN–DE"], url: "media/cheatsheet-genetics-k8-k10-en-de.pdf" },
+      { ks: [11, 13], name: ["Cheat sheet K11–K13 · Anh–Việt", "Cheat sheet K11–K13 · EN–VI"], url: "media/cheatsheet-genetics-k11-k13-en-vi.pdf" },
+      { ks: [11, 13], name: ["Cheat sheet K11–K13 · Anh–Đức", "Cheat sheet K11–K13 · EN–DE"], url: "media/cheatsheet-genetics-k11-k13-en-de.pdf" },
     ],
     videos: [
-      { ks: [1, 4], name: ["Chromosomes and Cell Division · 4 phút", "Chromosomes and Cell Division · 4 min"], src: "media/genetics-k1-k4.mp4", poster: "media/genetics-k1-k4-poster.jpg" },
-      { ks: [5, 7], name: ["Boy or girl? Purple or white? · 4 phút", "Boy or girl? Purple or white? · 4 min"], src: "media/genetics-k5-k7.mp4", poster: "media/genetics-k5-k7-poster.jpg" },
-      { ks: [8, 10], name: ["Where did white go? · 4 phút", "Where did white go? · 4 min"], src: "media/genetics-k8-k10.mp4", poster: "media/genetics-k8-k10-poster.jpg" },
-      { ks: [11, 13], name: ["Genetics in families · 4 phút", "Genetics in families · 4 min"], src: "media/genetics-k11-k13.mp4", poster: "media/genetics-k11-k13-poster.jpg" },
+      { ks: [1, 4], name: ["Video K1–K4 · Chromosomes and Cell Division", "Video K1–K4 · Chromosomes and Cell Division"], src: "media/video-genetics-k1-k4.mp4", poster: "media/video-genetics-k1-k4-cover.jpg" },
+      { ks: [5, 7], name: ["Video K5–K7 · Boy or girl? Purple or white?", "Video K5–K7 · Boy or girl? Purple or white?"], src: "media/video-genetics-k5-k7.mp4", poster: "media/video-genetics-k5-k7-cover.jpg" },
+      { ks: [8, 10], name: ["Video K8–K10 · Where did white go?", "Video K8–K10 · Where did white go?"], src: "media/video-genetics-k8-k10.mp4", poster: "media/video-genetics-k8-k10-cover.jpg" },
+      { ks: [11, 13], name: ["Video K11–K13 · Genetics in families", "Video K11–K13 · Genetics in families"], src: "media/video-genetics-k11-k13.mp4", poster: "media/video-genetics-k11-k13-cover.jpg" },
     ],
     worksheets: [
       "From the nucleus to the chromosome, DNA and gene",
@@ -654,31 +658,24 @@ const ME = {
       title: ["Trục gan/ruột–não: từ viêm đến bộ não", "The liver/gut–brain axis: from inflammation to the brain"],
       text: ["Tín hiệu viêm từ ruột và gan đi tới não ra sao? Mình học từ miễn dịch bẩm sinh (LPS kích hoạt NF-κB), qua inflammasome NLRP3, đến microglia, astrocyte và hàng rào máu–não.",
              "How do inflammatory signals from the gut and liver reach the brain? I'm working from innate immunity (LPS activating NF-κB), through the NLRP3 inflammasome, to microglia, astrocytes and the blood–brain barrier."],
-      items: [
-        { type: "Lesson", label: ["Bài 1: Miễn dịch bẩm sinh, từ LPS tới NF-κB", "Lesson 1: Innate immunity, from LPS to NF-κB"], url: "https://claude.ai/artifact/QAopkfcpdrVAEqavVu83zi" },
-        { type: "Practice", label: ["Bài 1 · Trang thực hành", "Lesson 1 · Practice page"], url: "https://claude.ai/artifact/PApZ1SzUfNNQTvb6ndqH37" },
-        { type: "Slides", label: ["Bài 2: Inflammasome NLRP3", "Lesson 2: The NLRP3 inflammasome"], url: "https://claude.ai/artifact/6bZNCLacbkeaYy7h49qnhQ" },
-        { type: "Practice", label: ["Bài 2 · Thực hành NLRP3", "Lesson 2 · NLRP3 practice"], url: "https://claude.ai/artifact/PntzafLdz15ahauLS1C2BT" },
-        { type: "Slides", label: ["Bài 3: Microglia, astrocyte và hàng rào máu–não", "Lesson 3: Microglia, astrocytes and the blood–brain barrier"], url: "https://claude.ai/artifact/3SU8WtXF7P1hAnVyQunR8z" },
-        { type: "Practice", label: ["Bài 3 · Trang thực hành", "Lesson 3 · Practice page"], url: "https://claude.ai/artifact/MGDMYECM5yLn86i1oNk79F" },
+      lessons: [
+        { n: 1, title: ["Miễn dịch bẩm sinh: từ LPS tới NF-κB", "Innate immunity: from LPS to NF-κB"], lesson: "https://claude.ai/artifact/QAopkfcpdrVAEqavVu83zi", practice: "https://claude.ai/artifact/PApZ1SzUfNNQTvb6ndqH37" },
+        { n: 2, title: ["Inflammasome NLRP3", "The NLRP3 inflammasome"], lesson: "https://claude.ai/artifact/6bZNCLacbkeaYy7h49qnhQ", practice: "https://claude.ai/artifact/PntzafLdz15ahauLS1C2BT" },
+        { n: 3, title: ["Microglia, astrocyte và hàng rào máu–não", "Microglia, astrocytes and the blood–brain barrier"], lesson: "https://claude.ai/artifact/3SU8WtXF7P1hAnVyQunR8z", practice: "https://claude.ai/artifact/MGDMYECM5yLn86i1oNk79F" },
       ] },
     { who: ["Tự học", "Self-study"],
       title: ["Network Spreading: protein lan kiểu prion", "Network Spreading: prion-like protein spread"],
       text: ["Protein bệnh lý lan trong não theo mạng kết nối thế nào? Mình học mô hình Network Diffusion và tự chạy thử trên trang thực hành.", "How do pathological proteins spread along brain networks? I studied the Network Diffusion Model and tried it on a practice page."],
-      items: [
-        { type: "Lesson", label: ["Bài 1: Protein lan kiểu prion", "Lesson 1: Prion-like spread"], url: "https://claude.ai/artifact/5znsrfs9yM4Ns2qyuVWB3P" },
-        { type: "Practice", label: ["Trang thực hành mô hình", "Interactive model practice"], url: "https://claude.ai/artifact/KUqeE5ghvZVHBpDvLtCCnB" },
+      lessons: [
+        { n: 1, title: ["Protein lan kiểu prion và Network Diffusion Model", "Prion-like spread and the Network Diffusion Model"], lesson: "https://claude.ai/artifact/5znsrfs9yM4Ns2qyuVWB3P", practice: "https://claude.ai/artifact/KUqeE5ghvZVHBpDvLtCCnB" },
       ] },
     { who: ["Sở thích", "For fun"],
       title: ["Nếm rượu vang có hệ thống", "Systematic wine tasting"],
       text: ["Một góc ngoài phòng lab: học cách nếm bằng giác quan, hiểu vì sao não “cảm” được hương vị, rồi đi từ vườn nho xuống hầm rượu để xem hương vị hình thành ra sao.", "A corner outside the lab: tasting with the senses, why the brain perceives flavour, then from the vineyard down to the cellar to see how flavour forms."],
-      items: [
-        { type: "Lesson", label: ["Bài 1: Cách nếm có hệ thống", "Lesson 1: How to taste"], url: "https://claude.ai/artifact/SgEqAYy53jf6DcxbxGJrpj" },
-        { type: "Practice", label: ["Phòng thực hành nếm rượu", "Tasting practice room"], url: "https://claude.ai/artifact/4XtMktHJ1egkLEcAu43SGd" },
-        { type: "Lesson", label: ["Bài 2: Vườn nho", "Lesson 2: The vineyard"], url: "https://claude.ai/artifact/DdcEciBVCLjm951K1KRvsd" },
-        { type: "Practice", label: ["Bài 2 · Trang thực hành tương tác", "Lesson 2 · Interactive practice"], url: "https://claude.ai/artifact/M5YgDhTPMvruD759pDnaCw" },
-        { type: "Slides", label: ["Bài 3: Hầm rượu", "Lesson 3: The cellar"], url: "https://claude.ai/artifact/HpDhNNqpqtq2g1Vhc3vBVR" },
-        { type: "Practice", label: ["Bài 3 · Trang thực hành tương tác", "Lesson 3 · Interactive practice"], url: "https://claude.ai/artifact/4YYjimfoNFeym8gTUFk93g" },
+      lessons: [
+        { n: 1, title: ["Nếm rượu có hệ thống", "Tasting systematically"], lesson: "https://claude.ai/artifact/SgEqAYy53jf6DcxbxGJrpj", practice: "https://claude.ai/artifact/4XtMktHJ1egkLEcAu43SGd" },
+        { n: 2, title: ["Vườn nho", "The vineyard"], lesson: "https://claude.ai/artifact/DdcEciBVCLjm951K1KRvsd", practice: "https://claude.ai/artifact/M5YgDhTPMvruD759pDnaCw" },
+        { n: 3, title: ["Hầm rượu", "The cellar"], lesson: "https://claude.ai/artifact/HpDhNNqpqtq2g1Vhc3vBVR", practice: "https://claude.ai/artifact/4YYjimfoNFeym8gTUFk93g" },
       ] },
   ],
 
@@ -761,7 +758,7 @@ const UI = {
   openVisual: ["mở visual", "open visual"], none: ["chưa có", "not yet"],
   sheetNote: ["Phiếu bài tập là bản mình dịch từ phiếu của giáo viên ở trường, nên chỉ ghi tên.", "Worksheets are my translations of the school teacher's sheets, so only titles are listed."],
   privateNote: ["Các bài này viết cùng Claude; nếu link chưa mở được, nhắn mình để xin quyền xem.", "These lessons were written with Claude; if a link doesn't open, message me for access."],
-  types: { Lesson: ["bài giảng", "lesson"], Practice: ["thực hành", "practice"], Slides: ["slides", "slides"] },
+  lessonN: ["Bài", "Lesson"], lessonLink: ["bài giảng", "lesson"], practiceLink: ["thực hành", "practice"],
   schoolTitle: ["ở trường: Python & dữ liệu", "at university: Python & data"], buildTitle: ["tự làm: công cụ cho mình", "on my own: tools for myself"],
   receiptTitle: ["HOÁ ĐƠN GITHUB", "GITHUB RECEIPT"], liveLoading: ["đang lấy dữ liệu…", "fetching…"],
   liveFail: ["Chưa lấy được dữ liệu, xem tại", "Couldn't reach GitHub; see"], repos: ["repo công khai", "public repos"], lastPush: ["lần push cuối", "last push"],
@@ -897,7 +894,7 @@ function kFiles(k) {
   const join = (arr) => arr.length ? arr.join(`<span class="sep"> · </span>`) : `<span class="note">${t(UI.none)}</span>`;
   const link = (x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${t(x.name)}</a>`;
   return {
-    visual: T.lessons.filter((x) => inK(x, k)).map((x) => `<a href="${esc(x.url)}#k${k}" target="_blank" rel="noopener">${t(UI.openVisual)}: ${esc(T.tools[k - 1])}</a>`),
+    visual: T.lessons.filter((x) => inK(x, k)).map((x) => `<a href="${esc(x.url)}#k${k}" target="_blank" rel="noopener">Visual K${k} · ${esc(T.tools[k - 1])}</a>`),
     slides: T.slides.filter((x) => inK(x, k)).map(link), cheats: T.cheats.filter((x) => inK(x, k)).map(link),
     videos: T.videos.filter((v) => inK(v, k)).map((v) => `<button class="textbtn" data-video="${esc(v.src)}" data-poster="${esc(v.poster)}">${t(v.name)}</button>`),
     ab, join,
@@ -1000,7 +997,8 @@ function chapterBody(id) {
       <div class="clip"><h3 class="lbl">${t(UI.studiesTitle)}</h3><ul>${ME.studies.map((s) => `<li>${t(s)}</li>`).join("")}</ul></div>`;
     case "teach": return tutorHTML();
     case "learn": return `<div class="folders">${ME.learn.map((w) => `<article class="folder" data-tab="${t(w.who)}"><h3>${t(w.title)}</h3><p>${t(w.text)}</p>
-        <div class="sheet"><ul>${w.items.map((i) => `<li><a href="${esc(i.url)}" target="_blank" rel="noopener">${t(i.label)}</a> <span class="type">${t(UI.types[i.type] || [i.type, i.type])}</span></li>`).join("")}</ul></div></article>`).join("")}</div>
+        <div class="sheet"><ol class="lessons">${w.lessons.map((l) => `<li><span class="ln">${t(UI.lessonN)} ${l.n}</span><span class="lt">${t(l.title)}</span>
+          <span class="ll"><a href="${esc(l.lesson)}" target="_blank" rel="noopener">${t(UI.lessonLink)}</a> · <a href="${esc(l.practice)}" target="_blank" rel="noopener">${t(UI.practiceLink)}</a></span></li>`).join("")}</ol></div></article>`).join("")}</div>
       <p class="note" style="margin-top:26px">${t(UI.privateNote)}</p>`;
     case "code": return codeHTML();
     case "skills": return `<div class="skillrows">${ME.skills.map(([g, list], gi) => `<div><h3 class="lbl">${t(g)}</h3>${list.map((s) => `<span class="dymo ${/Đang học|In development/.test(g[1]) || gi === 2 ? "learning" : ""}">${esc(s)}</span>`).join("")}</div>`).join("")}</div>`;
