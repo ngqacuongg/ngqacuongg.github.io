@@ -224,6 +224,12 @@
   ol.lessons .ln { font: 12px/1.9 var(--mono); color: var(--rose); grid-row: span 2; }
   ol.lessons .lt { font-weight: 600; line-height: 1.35; }
   ol.lessons .ll { font-size: 14.5px; }
+  details.part { border-bottom: 1px dotted var(--rule); }
+  details.part:last-child { border-bottom: 0; }
+  details.part summary { cursor: pointer; padding: 8px 0; font-weight: 600; line-height: 1.35; }
+  details.part summary .ln { font: 12px/1.9 var(--mono); color: var(--rose); margin-right: 6px; }
+  details.part summary .pc { font-weight: 400; color: var(--soft); font-size: 14px; }
+  details.part ol.lessons { padding: 0 0 8px; }
 
   /* ---- 6. học code ---- */
   .code-grid { display: grid; grid-template-columns: 1.15fr 1fr .9fr; gap: 26px; align-items: start; }
@@ -672,17 +678,47 @@ const ME = {
       ] },
     { who: ["Tự học", "Self-study"],
       title: ["Công nghệ sữa: từ thành phần tới quy trình", "Dairy technology: from composition to processing"],
-      text: ["Sữa không phải một dung dịch mà là hệ keo nhiều cỡ hạt. Mình học theo lộ trình 8 module, từ thành phần hoá lý của sữa tới xử lý nhiệt, lên men, bao bì, hạn sử dụng và kiểm soát chất lượng, rồi gom lại thành một bản tóm tắt sản phẩm; mỗi module kèm một dự án nhỏ ghi rõ là tự học.",
-             "Milk is not a solution but a colloid with particles of many sizes. I'm following an 8-module path, from the physical chemistry of milk to heat treatment, fermentation, packaging, shelf life and quality control, then pulled together into a product brief; each module comes with a small project clearly labelled as self-study."],
+      text: ["Sữa không phải một dung dịch mà là hệ keo nhiều cỡ hạt. Mình học 32 bài chia bốn phần: sinh học và thành phần của sữa; xử lý nhiệt, lên men, phô mai và bơ; probiotic, hệ vi sinh và trục ruột–não, kèm cách đọc thử nghiệm ở người; rồi công thức, bao bì, hạn dùng và hệ thống chất lượng, khép lại bằng một bản brief sản phẩm. Đây là tự học, không phải kinh nghiệm làm trong ngành.",
+             "Milk is not a solution but a colloid with particles of many sizes. I'm working through 32 lessons in four parts: the biology and composition of milk; heat treatment, fermentation, cheese and butter; probiotics, the microbiome and the gut–brain axis, with how to read human trials; then formulation, packaging, shelf life and quality systems, ending in a product brief. This is self-study, not industry experience."],
+      parts: [
+        { from: 1, to: 8, title: ["Sinh học và thành phần của sữa", "Biology and composition of milk"] },
+        { from: 9, to: 16, title: ["Xử lý nhiệt, lên men, phô mai và bơ", "Heat, fermentation, cheese and butter"] },
+        { from: 17, to: 24, title: ["Vi sinh, trục ruột–não và đọc bằng chứng", "Microbes, the gut–brain axis and reading evidence"] },
+        { from: 25, to: 32, title: ["Công thức, bao bì, chất lượng và capstone", "Formulation, packaging, quality and capstone"] },
+      ],
       lessons: [
-        { n: 1, title: ["Thành phần và cấu trúc hoá lý của sữa", "Milk composition and physicochemical structure"], lesson: "https://claude.ai/artifact/2qjm4Uj44RjiaLnQPpS53U", practice: "https://claude.ai/artifact/HzjibLCoZjn35XcjvB8TXE", video: "media/video-dairy-l1.mp4" },
-        { n: 2, title: ["Gia nhiệt và đồng hoá", "Heat treatment and homogenisation"], lesson: "https://claude.ai/artifact/Lmz62GbZ8E4GbbUtTSRfVU", practice: "https://claude.ai/artifact/UMbGukJvyy3zsKbwcfM4Pu", video: "media/video-dairy-l2.mp4" },
-        { n: 3, title: ["Sữa chua và sản phẩm lên men", "Yoghurt and fermented products"], lesson: "https://claude.ai/artifact/DXQfh694o39jzaWoLAT3Ld", practice: "https://claude.ai/artifact/23NHcJPf6xHmXtgz3A7Gat", video: "media/video-dairy-l3.mp4" },
-        { n: 4, title: ["Cô đặc, sấy, phô mai và bơ", "Concentration, drying, cheese and butter"], lesson: "https://claude.ai/artifact/AEKSMkmNuwqtDqW2zp4C2F", practice: "https://claude.ai/artifact/Kf5DuzJe1ndQNHxgnu2Bvk", video: "media/video-dairy-l4.mp4" },
-        { n: 5, title: ["Đồ uống và công thức thực phẩm", "Beverages and food formulation"], lesson: "https://claude.ai/artifact/DuFdbvLmCCmVJApVcRRQHT", practice: "https://claude.ai/artifact/KZhk6vhP81nXS2fN3YHYvh", video: "media/video-dairy-l5.mp4" },
-        { n: 6, title: ["Bao bì và hạn sử dụng", "Packaging and shelf life"], lesson: "https://claude.ai/artifact/NiyiJ9QnnfC5mY5bfDc5tX", practice: "https://claude.ai/artifact/YYZ5ZxMSzocUhGvSYwRbw6", video: "media/video-dairy-l6.mp4" },
-        { n: 7, title: ["Phân tích và hệ thống chất lượng", "Analysis and quality systems"], lesson: "https://claude.ai/artifact/5vrfKJdvpavoWCkDdPtSZ5", practice: "https://claude.ai/artifact/TBtQxHo19tdycXcSt82CKe", video: "media/video-dairy-l7.mp4" },
-        { n: 8, title: ["Tổng kết: bản tóm tắt sản phẩm", "Capstone: a product brief"], lesson: "https://claude.ai/artifact/JnoSLnjDpdDi6WTB3tQVzx", practice: "https://claude.ai/artifact/N2TdNQmAdBjixB2xpwfitk", video: "media/video-dairy-l8.mp4" },
+        { n: 1, title: ["Sữa là gì về mặt sinh học", "What milk is, biologically"], lesson: "https://claude.ai/artifact/NrHjX9prTVpTooQQHUP1M4", practice: "https://claude.ai/artifact/4pT3Xm7NR6n5sPvJWmK9JT", video: "media/video-dairy-l1.mp4" },
+        { n: 2, title: ["Hệ keo của sữa", "Milk as a colloid"], lesson: "https://claude.ai/artifact/KLRmiNzsgz5KYDejbHhA3u", practice: "https://claude.ai/artifact/YLWCcQFoqRPyTGkAnpZ6Bj", video: "media/video-dairy-l2.mp4" },
+        { n: 3, title: ["Lactose và lactase", "Lactose and lactase"], lesson: "https://claude.ai/artifact/KfW7AKE9mrfJQCMk1aZZ9k", practice: "https://claude.ai/artifact/C6tCXmtiGr73THASzALQrz", video: "media/video-dairy-l3.mp4" },
+        { n: 4, title: ["Chất béo sữa và MFGM", "Milk fat and the MFGM"], lesson: "https://claude.ai/artifact/DpkARXykbYGjwYJgAmr4sS", practice: "https://claude.ai/artifact/NUAsrxUoBLfq9X4fXKJmUC", video: "media/video-dairy-l4.mp4" },
+        { n: 5, title: ["Casein và whey", "Casein and whey"], lesson: "https://claude.ai/artifact/4S5KFYhUxiwtyBk2TpGXue", practice: "https://claude.ai/artifact/QNWnVHVyvXAfFDXWVYV8Tn", video: "media/video-dairy-l5.mp4" },
+        { n: 6, title: ["Khoáng, vitamin, enzyme bản địa", "Minerals, vitamins and native enzymes"], lesson: "https://claude.ai/artifact/GXWZ1XHGHbyy3fRc1f9u8N", practice: "https://claude.ai/artifact/1k1PPAkWBCTJ9odCZcGfaH", video: "media/video-dairy-l6.mp4" },
+        { n: 7, title: ["Oligosaccharide sữa và bifidobacteria", "Milk oligosaccharides and bifidobacteria"], lesson: "https://claude.ai/artifact/NSTGw6RifqjGBt21hev58J", practice: "https://claude.ai/artifact/M6vTiyR84QyeFFFhVcTv9J", video: "media/video-dairy-l7.mp4" },
+        { n: 8, title: ["Tiêu hoá sữa: phần nào còn lại", "Digesting milk: what is left"], lesson: "https://claude.ai/artifact/NHdvmnxN5M4noJVpQ3jAz5", practice: "https://claude.ai/artifact/CyboZtKmcTQyW51hiVibg5", video: "media/video-dairy-l8.mp4" },
+        { n: 9, title: ["Động học xử lý nhiệt", "Heat treatment kinetics"], lesson: "https://claude.ai/artifact/S8pMXkFJ4eyDBnDjQoNeff", practice: "https://claude.ai/artifact/7FsbGGkifoyFhdiRfM5C3K", video: "media/video-dairy-l9.mp4" },
+        { n: 10, title: ["Biến đổi do nhiệt: whey và Maillard", "Heat-induced changes: whey and Maillard"], lesson: "https://claude.ai/artifact/HLsHqUGgVofwPEBei9vN4v", practice: "https://claude.ai/artifact/1trPfkui1XosjrDAmUJiVh", video: "media/video-dairy-l10.mp4" },
+        { n: 11, title: ["Đồng hoá", "Homogenisation"], lesson: "https://claude.ai/artifact/UqWBmWRR65ZMWee5scPVUX", practice: "https://claude.ai/artifact/JrvCFRpWvsdaEPKeWUaVNu", video: "media/video-dairy-l11.mp4" },
+        { n: 12, title: ["Độ bền nhiệt của hệ keo", "Heat stability of the colloid"], lesson: "https://claude.ai/artifact/Xi6Y9T8kwVDPWXrdKFVKkj", practice: "https://claude.ai/artifact/5utYkekDiNNiohEqs1iyr6", video: "media/video-dairy-l12.mp4" },
+        { n: 13, title: ["Lên men sữa", "Milk fermentation"], lesson: "https://claude.ai/artifact/4zVMv9FLTEA9wmHwQA9NFE", practice: "https://claude.ai/artifact/JBxiYiXFrf2hp9FNykrPfL", video: "media/video-dairy-l13.mp4" },
+        { n: 14, title: ["Vi sinh sữa chua và EPS", "Yoghurt microbes and EPS"], lesson: "https://claude.ai/artifact/9BEnfFnJSy7wMhKG6pSMUN", practice: "https://claude.ai/artifact/Wr4gfNJZLoW8fD4R26Z4N8", video: "media/video-dairy-l14.mp4" },
+        { n: 15, title: ["Phô mai", "Cheese"], lesson: "https://claude.ai/artifact/Y6KEV57V6UMzvCDeMoGUke", practice: "https://claude.ai/artifact/81URCYCQvrxUeLWEiJxVNQ", video: "media/video-dairy-l15.mp4" },
+        { n: 16, title: ["Cô đặc, sấy, cream và bơ", "Concentration, drying, cream and butter"], lesson: "https://claude.ai/artifact/S6C8kU3HLJsc4j72wRH33D", practice: "https://claude.ai/artifact/NTWCTGYAnFgE8UZpb5TnVK", video: "media/video-dairy-l16.mp4" },
+        { n: 17, title: ["Probiotic và chủng khởi động", "Probiotics and starter cultures"], lesson: "https://claude.ai/artifact/XmkyQLuptsFhMLGnZQiZLL", practice: "https://claude.ai/artifact/52kcBE2s8ZVNHVrn7pj8yp", video: "media/video-dairy-l17.mp4" },
+        { n: 18, title: ["Prebiotic, synbiotic, postbiotic", "Prebiotics, synbiotics, postbiotics"], lesson: "https://claude.ai/artifact/Srj2pVxbTLdLaApyFAAgeb", practice: "https://claude.ai/artifact/JGTczXvxWaLzTvDFAaLhPc", video: "media/video-dairy-l18.mp4" },
+        { n: 19, title: ["Hệ vi sinh ruột và cách đo", "The gut microbiome and how to measure it"], lesson: "https://claude.ai/artifact/QPULgiBHiw1fCXJzBz3RbK", practice: "https://claude.ai/artifact/RWooc6YEjPNfj129JNv5jX", video: "media/video-dairy-l19.mp4" },
+        { n: 20, title: ["SCFA và chuyển hoá", "SCFAs and metabolism"], lesson: "https://claude.ai/artifact/Ut2VevXC9LVArDAKaPGM2Z", practice: "https://claude.ai/artifact/8WMvVU4TGzGehDRM2y5FD3", video: "media/video-dairy-l20.mp4" },
+        { n: 21, title: ["Các đường dẫn ruột–não", "Gut–brain pathways"], lesson: "https://claude.ai/artifact/AYuCiGMa2uacUKBr3C3Tz4", practice: "https://claude.ai/artifact/Qm2x8wxMURZ7HCVNR7q8Hv", video: "media/video-dairy-l21.mp4" },
+        { n: 22, title: ["Tryptophan, serotonin, kynurenine", "Tryptophan, serotonin, kynurenine"], lesson: "https://claude.ai/artifact/FoyCo3N1SC6ZHoMjsd4Exo", practice: "https://claude.ai/artifact/U51XA3CiPqTjBU9EVAPfnp", video: "media/video-dairy-l22.mp4" },
+        { n: 23, title: ["Đọc thử nghiệm ngẫu nhiên ở người", "Reading human randomised trials"], lesson: "https://claude.ai/artifact/BSuQou7SKLDFenzKxAyQso", practice: "https://claude.ai/artifact/X5wZKw3eMjsSTbYkV7W8hz", video: "media/video-dairy-l23.mp4" },
+        { n: 24, title: ["Seminar thẩm định ba bài báo", "Seminar: appraising three papers"], lesson: "https://claude.ai/artifact/VBJRy27wtsQsh7pLApMLJL", practice: "https://claude.ai/artifact/SKgEuA87T494GGd2SB5M6L", video: "media/video-dairy-l24.mp4" },
+        { n: 25, title: ["Đồ uống và công thức hoá", "Beverages and formulation"], lesson: "https://claude.ai/artifact/6jQ9VBcgfAgVJcGzt7xUpE", practice: "https://claude.ai/artifact/JyqaGy2kCGvyrWek5hPXYz", video: "media/video-dairy-l25.mp4" },
+        { n: 26, title: ["Thiết kế công thức cho mục tiêu sinh học", "Formulating for a biological target"], lesson: "https://claude.ai/artifact/LpjrqLqAv1iCxrq8BXgPSd", practice: "https://claude.ai/artifact/StM93VnFpaqEQUkw82zd6k", video: "media/video-dairy-l26.mp4" },
+        { n: 27, title: ["Bao bì và rào cản", "Packaging and barriers"], lesson: "https://claude.ai/artifact/745TpDmqF81FTH9UYQuUAR", practice: "https://claude.ai/artifact/FVp5qED9vUWg2KPVJEJyue", video: "media/video-dairy-l27.mp4" },
+        { n: 28, title: ["Hạn dùng: Q10 và Arrhenius", "Shelf life: Q10 and Arrhenius"], lesson: "https://claude.ai/artifact/QgGmuooaNpPCCvyVETookC", practice: "https://claude.ai/artifact/QmfwLpWFvmJgvsHd3DhhJm", video: "media/video-dairy-l28.mp4" },
+        { n: 29, title: ["Phân tích lý–hoá và cảm quan", "Physicochemical and sensory analysis"], lesson: "https://claude.ai/artifact/6wMHLLUhw543y3J53gJnZH", practice: "https://claude.ai/artifact/DNuJqyXn5moHzAf3HDNiyQ", video: "media/video-dairy-l29.mp4" },
+        { n: 30, title: ["Hệ thống chất lượng: HACCP, ISO 22000, melamine", "Quality systems: HACCP, ISO 22000, melamine"], lesson: "https://claude.ai/artifact/L1AiFnoNcUhSVzntMT1CZp", practice: "https://claude.ai/artifact/CAy14q7KMLebohpspLMa4Y", video: "media/video-dairy-l30.mp4" },
+        { n: 31, title: ["Capstone: soạn bản brief sản phẩm", "Capstone workshop: the product brief"], lesson: "https://claude.ai/artifact/6D2q23nESyMj64yadPHYKf", practice: "https://claude.ai/artifact/KoFVkCe7q8dUWiw6g2HP3M", video: "media/video-dairy-l31.mp4" },
+        { n: 32, title: ["Capstone: bảo vệ bản brief", "Capstone defence: defending the brief"], lesson: "https://claude.ai/artifact/E5y9F1YnDYTNZmZceYVrjF", practice: "https://claude.ai/artifact/Whazet4HNWX2YGSvRhFz2F", video: "media/video-dairy-l32.mp4" },
       ] },
     { who: ["Sở thích", "For fun"],
       title: ["Nếm rượu vang có hệ thống", "Systematic wine tasting"],
@@ -774,7 +810,7 @@ const UI = {
   openVisual: ["mở visual", "open visual"], none: ["chưa có", "not yet"],
   sheetNote: ["Phiếu bài tập là bản mình dịch từ phiếu của giáo viên ở trường, nên chỉ ghi tên.", "Worksheets are my translations of the school teacher's sheets, so only titles are listed."],
   privateNote: ["Các bài này viết cùng Claude; nếu link chưa mở được, nhắn mình để xin quyền xem.", "These lessons were written with Claude; if a link doesn't open, message me for access."],
-  lessonN: ["Bài", "Lesson"], lessonLink: ["bài giảng", "lesson"], practiceLink: ["thực hành", "practice"], videoLink: ["video", "video"],
+  lessonN: ["Bài", "Lesson"], partN: ["Phần", "Part"], lessonsN: ["Bài", "Lessons"], lessonLink: ["bài giảng", "lesson"], practiceLink: ["thực hành", "practice"], videoLink: ["video", "video"],
   schoolTitle: ["ở trường: Python & dữ liệu", "at university: Python & data"], buildTitle: ["tự làm: công cụ cho mình", "on my own: tools for myself"],
   receiptTitle: ["HOÁ ĐƠN GITHUB", "GITHUB RECEIPT"], liveLoading: ["đang lấy dữ liệu…", "fetching…"],
   liveFail: ["Chưa lấy được dữ liệu, xem tại", "Couldn't reach GitHub; see"], repos: ["repo công khai", "public repos"], lastPush: ["lần push cuối", "last push"],
@@ -997,6 +1033,8 @@ function paintGitHub() {
 }
 
 /* ---- Nội dung từng trang ---- */
+const lessonLi = (l) => `<li><span class="ln">${t(UI.lessonN)} ${l.n}</span><span class="lt">${t(l.title)}</span>
+          <span class="ll"><a href="${esc(l.lesson)}" target="_blank" rel="noopener">${t(UI.lessonLink)}</a> · <a href="${esc(l.practice)}" target="_blank" rel="noopener">${t(UI.practiceLink)}</a>${l.video ? ` · <button class="textbtn" data-video="${esc(l.video)}" data-poster="${esc(l.video.replace(".mp4", "-cover.jpg"))}">${t(UI.videoLink)}</button>` : ""}</span></li>`;
 function chapterBody(id) {
   switch (id) {
     case "about": return `<div class="about-grid">
@@ -1013,8 +1051,7 @@ function chapterBody(id) {
       <div class="clip"><h3 class="lbl">${t(UI.studiesTitle)}</h3><ul>${ME.studies.map((s) => `<li>${t(s)}</li>`).join("")}</ul></div>`;
     case "teach": return tutorHTML();
     case "learn": return `<div class="folders">${ME.learn.map((w) => `<article class="folder" data-tab="${t(w.who)}"><h3>${t(w.title)}</h3><p>${t(w.text)}</p>
-        <div class="sheet"><ol class="lessons">${w.lessons.map((l) => `<li><span class="ln">${t(UI.lessonN)} ${l.n}</span><span class="lt">${t(l.title)}</span>
-          <span class="ll"><a href="${esc(l.lesson)}" target="_blank" rel="noopener">${t(UI.lessonLink)}</a> · <a href="${esc(l.practice)}" target="_blank" rel="noopener">${t(UI.practiceLink)}</a>${l.video ? ` · <button class="textbtn" data-video="${esc(l.video)}" data-poster="${esc(l.video.replace(".mp4", "-cover.jpg"))}">${t(UI.videoLink)}</button>` : ""}</span></li>`).join("")}</ol></div></article>`).join("")}</div>
+        <div class="sheet">${w.parts ? w.parts.map((p, pi) => `<details class="part"><summary><span class="ln">${t(UI.partN)} ${"ABCDEFGH"[pi]}</span>${t(p.title)} <span class="pc">· ${t(UI.lessonsN)} ${p.from}–${p.to}</span></summary><ol class="lessons">${w.lessons.filter((l) => l.n >= p.from && l.n <= p.to).map(lessonLi).join("")}</ol></details>`).join("") : `<ol class="lessons">${w.lessons.map(lessonLi).join("")}</ol>`}</div></article>`).join("")}</div>
       <p class="note" style="margin-top:26px">${t(UI.privateNote)}</p>`;
     case "code": return codeHTML();
     case "skills": return `<div class="skillrows">${ME.skills.map(([g, list], gi) => `<div><h3 class="lbl">${t(g)}</h3>${list.map((s) => `<span class="dymo ${/Đang học|In development/.test(g[1]) || gi === 2 ? "learning" : ""}">${esc(s)}</span>`).join("")}</div>`).join("")}</div>`;
